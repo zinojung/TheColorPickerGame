@@ -1,3 +1,35 @@
-h1 {
+body .jumbotron h1 {
 	text-align: center;
+	color: white;
+	font-size: 4rem;
+}
+
+html body {
+	background-color: #272626;
+}
+
+body .jumbotron h1 span {
+	font-size: 7rem;
+}
+
+body .jumbotron {
+	background-color: rgba(25, 92, 167, 0.9);
+	margin: 0;
+	padding: 20px 0 20px 0;
+}
+
+.navbar .container {
+	margin: 0;
+}
+
+body .navbar-default .navbar-nav>li>a {
+	font-weight: bold;
+	font-size: 1.7rem;
+	color: rgba(25, 92, 167, 0.9);
+}
+
+body .color {
+	height: 210px;
+	border-radius: 30px;
+	background-color: white;
 }
