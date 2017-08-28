@@ -28,8 +28,21 @@ body .navbar-default .navbar-nav>li>a {
 	color: rgba(25, 92, 167, 0.9);
 }
 
-body .color {
+body .square {
 	height: 210px;
 	border-radius: 30px;
 	background-color: white;
+	border: 0px;
+}
+
+.disappear {
+	background-color: #272626;
+	transition:all 1s;
+}
+
+#stateDisplay {
+	text-align : center;
+	padding: 15px;
+	font-weight: bold;
+	font-size: 1.5rem;
 }
