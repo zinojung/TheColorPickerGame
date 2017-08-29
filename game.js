@@ -10,27 +10,39 @@ function getRandomRgb() {
 	return "RGB(" + getRandomInt() + ", " + getRandomInt() + ", " + getRandomInt() + ")";
 }
 
-
-//set random rgb to square
-var squares = document.querySelectorAll(".square");
-for(var i = 0; i < squares.length; i++) {
-	squares[i].style.backgroundColor = getRandomRgb();
+function resetColor() {
+	for(var i = 0; i < numOfSquare; i++) {
+		squares[i].style.backgroundColor = getRandomRgb();
+		//display random rgb to html
+		rgbDisplay.textContent = squares[getRandomIntIn5()].style.backgroundColor.toUpperCase();
+		document.querySelector("#stateDisplay").textContent = " ";
+	}
 }
 
-//display random rgb to html
+var squares = document.querySelectorAll(".square");
 var rgbDisplay = document.querySelector("#rgbDisplay");
-rgbDisplay.textContent = squares[getRandomIntIn5()].style.backgroundColor.toUpperCase();
+// //disappear all squares
+// var squares = document.querySelectorAll(".square");
+// for(var i = 0; i < 6; i++) {
+// 	squares[i].style.backgroundColor = "#232323";
+// }
+
+//give numOfSquare 3 or 6 on
+var numOfSquare = 6;
+var resetButton = document.querySelector("#reset");
+resetButton.addEventListener("click", resetColor);
+
+resetColor();
 
 
 //if square clicked was wrong, remove it and display try again;
-for(var i = 0; i < squares.length; i++) {
+for(var i = 0; i < numOfSquare; i++) {
 	squares[i].addEventListener("click", function() {
-		this.style.transition = "all 1s";
 		if(this.style.backgroundColor !== rgbDisplay.textContent.toLowerCase()) {
 			document.querySelector("#stateDisplay").textContent = "Try Again!";
-			this.style.backgroundColor = "#272626";
+			this.style.backgroundColor = "#232323";
 		} else {
-			document.querySelector("#playAgain").textContent = "PLAY AGAIN?"
+			document.querySelector("#reset").textContent = "PLAY AGAIN?";
 			document.querySelector("#stateDisplay").textContent = "Correct!";
 			turnAllSquare(this.style.backgroundColor);
 			document.querySelector(".jumbotron").style.backgroundColor = this.style.backgroundColor;
@@ -40,8 +52,7 @@ for(var i = 0; i < squares.length; i++) {
 }
 
 function turnAllSquare(color) {
-	for(var i = 0; i < squares.length; i++) {
+	for(var i = 0; i < numOfSquare; i++) {
 		squares[i].style.backgroundColor = color;
 	}
 }
-

@@ -5,7 +5,7 @@ body .jumbotron h1 {
 }
 
 html body {
-	background-color: #272626;
+	background-color: #232323;
 }
 
 body .jumbotron h1 span {
@@ -16,6 +16,16 @@ body .jumbotron {
 	background-color: rgba(25, 92, 167, 0.9);
 	margin: 0;
 	padding: 20px 0 20px 0;
+}
+
+#navi {
+	background-color: white;
+	height: 30px;
+	text-align: center;
+}
+
+body .container {
+	margin-top : 30px;
 }
 
 .navbar .container {
@@ -31,14 +41,10 @@ body .navbar-default .navbar-nav>li>a {
 body .square {
 	height: 210px;
 	border-radius: 30px;
-	background-color: white;
 	border: 0px;
+	transition: all 1s;
 }
 
-.disappear {
-	background-color: #272626;
-	transition:all 1s;
-}
 
 #stateDisplay {
 	text-align : center;
